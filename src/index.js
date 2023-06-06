@@ -1,18 +1,15 @@
-const express = require('express')
-const app = express()
-const {engine} = require('express-handlebars');
-const path = require('path');
+const express = require("express");
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.engine('.hbs',engine({
-    extname:'.hbs'
-}))
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.get('/',(req,res)=>{
+  res.send(`<h1>Pagina Principal, Equipo #1</h1>
+              <h4>Puede acceder a las siguientes rutas: </h4>
+              <h4>/integrantes</h4>
+              <h4>/productos</h4>
+  `)
+})
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
 
 app.get('/integrantes', (req, res) => {
   res.json([
