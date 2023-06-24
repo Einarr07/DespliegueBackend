@@ -6,7 +6,7 @@ app.get('/',(req,res)=>{
   res.send(`<h1>Pagina Principal, Equipo #1</h1>
               <h4>Puede acceder a las siguientes rutas: </h4>
               <h4>/integrantes</h4>
-              <h4>/productos</h4>
+              <h4>/products</h4>
   `)
 })
 
